@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "memory": {},
+        "mongodb": {
+            "host": "localhost",
+            "database": "oilwreck",
+            "port": 27017
+        }
+    }
+}

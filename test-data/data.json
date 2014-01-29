@@ -1,0 +1,98 @@
+[
+    {
+        "date":"Oct 17, 2013",
+        "type":"train",
+        "nearestCity":"Sexsmith",
+        "stateProv":"Alberta",
+        "country":"Canada",
+        "blurb":"<p><strong>Oct 17, 2013</strong>: Residents in the northwestern Alberta town of Sexsmith were forced from their homes after four CN rail cars carrying anhydrous ammonia left the rails. The cars remained upright and there were no leaks.</p>"
+    },
+    {
+        "date":"Oct 7, 2013",
+        "type":"train",
+        "nearestCity":"Brampton",
+        "stateProv":"Ontario",
+        "country":"Canada",
+        "blurb":"<p><strong>Oct. 7, 2013</strong>: Four empty tanker cars that had been used to carry jet fuel went off the track in Brampton, Ont. A CN employee suffered minor injuries and the derailment caused commuter delays for GO Train travellers.</p>"
+    },
+    {
+        "date":"Sept. 25, 2013",
+        "type":"train",
+        "nearestCity":"Landis",
+        "stateProv":"Saskatchewan",
+        "country":"Canada",
+        "blurb":"<p><strong>Sept. 25, 2013</strong>: Seventeen CN rail cars, some carrying flammable petroleum, ethanol and chemicals, came off the tracks near the village of Landis, in western Saskatchewan, in the middle of the night. A nearby school was closed as hazardous material crews cleaned up spilled oil. No one was injured.</p>"
+    },
+    {
+        "date":"Sept. 18, 2013",
+        "type":"train",
+        "nearestCity":"Ottawa",
+        "stateProv":"Ontario",
+        "country":"Canada",
+        "blurb":"<p>strong>Sept. 18, 2013</strong>: Crossing lights, bells and gates were all reported to have been activated when an Ottawa city bus collided with a Via Rail passenger train west of the capital. Six people on the bus were killed, including the driver, and more than 30 passengers were injured. No one on the train was hurt.</p>"
+    },
+    {
+        "date":"July 27, 2013",
+        "type":"train",
+        "nearestCity":"Lloydminister",
+        "stateProv":"Alberta",
+        "country":"Canada",
+        "blurb":"<p><strong>July 27, 2013</strong>: A CPR locomotive and seven tanker cars carrying oil left the tracks in Lloydminister, which straddles the Alberta-Saskatchewan boundary. Some diesel spilled from the locomotive and was contained. RCMP said nothing spilled from the cars, no one was injured and no evacuations were necessary.</p>"
+    },
+    {
+        "date":"Jul 8, 2013",
+        "type":"train",
+        "nearestCity":"Gogoma",
+        "stateProv":"Ontario",
+        "country":"Canada",
+        "blurb":"<p><strong>Jul 8, 2013</strong>: An ammonia leak from a train caused the evacuation of roughly one-quarter of the population of the small northern Ontario town of Gogoma. No one was injured.</p>"
+    },
+    {
+        "date":"July 6, 2013",
+        "type":"train",
+        "nearestCity":"Lac-Megantic",
+        "stateProv":"Quebec",
+        "country":"Canada",
+        "blurb":"<p><strong>July 6, 2013</strong>: A runaway train of 72 tank cars loaded with a volatile crude oil crashed and exploded in the centre of Lac-Megantic, Que., killing 47 people and destroying half the downtown area. The train, owned by Montreal, Maine &amp; Atlantic Railway, was unmanned at the time.</p>"
+    },
+    {
+        "date":"July 6, 2013",
+        "type":"train",
+        "nearestCity":"Lac-Megantic",
+        "stateProv":"Quebec",
+        "country":"Canada",
+        "blurb":"<p><strong>July 6, 2013</strong>: A runaway train of 72 tank cars loaded with a volatile crude oil crashed and exploded in the centre of Lac-Megantic, Que., killing 47 people and destroying half the downtown area. The train, owned by Montreal, Maine &amp; Atlantic Railway, was unmanned at the time.</p>"
+    },
+    {
+        "date":"June 27, 2013",
+        "type":"train",
+        "nearestCity":"Calgary",
+        "stateProv":"Alberta",
+        "country":"Canada",
+        "blurb":"<p><strong>June 27, 2013</strong>: Seven cars derailed as a bridge over the flood-swollen Bow River in Calgary collapsed as a CPR train tried to cross it. Five cars carried petroleum products, one was filled with ethylene glycol and one was empty. No spills or injuries were reported but Calgary Mayor Naheed Nenshi demanded answers.</p>"
+    },
+    {
+        "date":"June 2, 2013",
+        "type":"train",
+        "nearestCity":"Sudbury",
+        "stateProv":"Ontario",
+        "country":"Canada",
+        "blurb":"<p><strong>June 2, 2013</strong>: Eleven CPR rail cars derailed on a trestle bridge near Wanup, east of Sudbury, Ont. There were no injuries, but the cars were carrying containers of consumer goods and about half of them entered a nearby river, prompting a drinking-water advisory.</p>"
+    },
+    {
+        "date":"May 23, 2013",
+        "type":"train",
+        "nearestCity":"Okotoks",
+        "stateProv":"Alberta",
+        "country":"Canada",
+        "blurb":"<p><strong>May 23, 2013</strong>: Police in the southern Alberta community of Okotoks had to respond to an unusual call when a runaway train car rumbled through town. They said the wayward train car was empty and eventually stopped when it bounced off the tracks. No one was injured and CPR attributed the incident to vandalism.</p>"
+    },
+    {
+        "date":"May 21, 2013",
+        "type":"train",
+        "nearestCity":"Jansen",
+        "stateProv":"Saskatchewan",
+        "country":"Canada",
+        "blurb":"<p><strong>May 21, 2013</strong>: Five cars on a CPR train derailed near the village of Jansen in southeastern Saskatchewan and one of them spilled more than 91,000 litres of oil. There were no injuries.</p>"
+    }
+]

@@ -1,0 +1,21 @@
+{
+  "db": {
+    "defaultForType": "db",
+    "connector": "memory"
+  },
+  "mongodb": {
+    "defaultForType": "mongodb",
+    "connector": "mongodb"
+  },
+  "push": {
+    "defaultForType": "push",
+    "connector": "loopback-push-notification",
+    "installation": "installation",
+    "notification": "notification",
+    "application": "application"
+  },
+  "mail": {
+    "defaultForType": "mail",
+    "connector": "mail"
+  }
+}
