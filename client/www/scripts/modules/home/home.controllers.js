@@ -10,7 +10,7 @@ Home.controller('HomeController', [
     console.log('home');
     $scope.viewTitle = 'Oil Wreck';
 
-    $scope.events = HomeService.getAllEvents();
+
 
 
   }

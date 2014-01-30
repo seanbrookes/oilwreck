@@ -4,29 +4,17 @@
 var app = angular.module('app', [
   'ui.router',
   'ngResource',
-  'Home'
+  'lbServices',
+  'Home',
+  'Tag',
+  'Event',
+  'ui.bootstrap'
 ]);
 app.run([
   '$http',
   '$templateCache',
   function ($http, $templateCache) {
-console.log('Home Run');
 
-    /*
-     *
-     * pre load the module templates
-     *
-     * */
-    /*
-     *
-     * Load Dealer Main Template
-     *
-     * */
-//    $http.get('./modules/dealer/templates/dealer.main.html').
-//      success(function (res) {
-//        $templateCache.put('dealer.main.html', res);
-//      }
-//    );
 
   }
 ]);
@@ -48,6 +36,21 @@ app.config([
         url: '/',
         controller: 'HomeController',
         templateUrl: './scripts/modules/home/templates/home.template.html'
+      }).
+      state('tags', {
+        url:'/tags',
+        controller:'TagController',
+        templateUrl:'./scripts/modules/tag/templates/tag.input.html'
+      }).
+      state('eventform', {
+        url:'/eventform',
+        controller:'EventFormController',
+        templateUrl:'./scripts/modules/event/templates/event.form.html'
+      }).
+      state('events', {
+        url:'/events',
+        controller:'EventController',
+        templateUrl:'./scripts/modules/event/templates/event.list.html'
       });
 
   }

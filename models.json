@@ -121,10 +121,26 @@
       },
       "material": {
         "type": "string"
+      },
+      "tags": {
+        "type": "array"
       }
     },
     "public": true,
     "dataSource": "mongodb",
     "plural": "events"
+  },
+  "tag": {
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "public": true,
+    "dataSource": "mongodb",
+    "plural": "tags"
   }
 }

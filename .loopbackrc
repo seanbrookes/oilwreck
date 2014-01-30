@@ -1,5 +1,5 @@
 {
-    "dev": {
+    "development": {
         "memory": {},
         "mongodb": {
             "host": "localhost",

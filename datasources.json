@@ -5,7 +5,10 @@
   },
   "mongodb": {
     "defaultForType": "mongodb",
-    "connector": "mongodb"
+    "connector": "loopback-connector-mongodb",
+    "database": "oilwreck",
+    "host": "localhost",
+    "port": "27017"
   },
   "push": {
     "defaultForType": "push",

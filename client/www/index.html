@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+
     <title>Oil Wreck</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 </head>
 <body>
-Write some text in textbox:
-<input type="text" ng-model="sometext" />
 
-<h1 ng-show="sometext">Hello {{ sometext }}</h1>
 <div ng-controller="HomeController">
 
+    <a ui-sref="home">home</a>
+    <a ui-sref="tags">Tags</a>
+    <a ui-sref="events">Events</a>
     <div ui-view>
         Hello World
     </div>
@@ -23,7 +29,18 @@ Write some text in textbox:
 <script src="./scripts/vendor/lib/angular-sanitize.js"></script>
 <script src="./scripts/vendor/lib/angular-resource.js"></script>
 
+<script src="./bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+<script src="./scripts/modules/common/lb-services.js"></script>
+
 <script src="./scripts/app.js"></script>
+<script src="./scripts/modules/tag/tag.module.js"></script>
+<script src="./scripts/modules/tag/tag.services.js"></script>
+<script src="./scripts/modules/tag/tag.controllers.js"></script>
+<script src="./scripts/modules/event/event.module.js"></script>
+<script src="./scripts/modules/event/event.services.js"></script>
+<script src="./scripts/modules/event/event.controllers.js"></script>
 <script src="./scripts/modules/home/home.module.js"></script>
 <script src="./scripts/modules/home/home.services.js"></script>
 <script src="./scripts/modules/home/home.controllers.js"></script>

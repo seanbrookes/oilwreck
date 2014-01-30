@@ -1,0 +1,10 @@
+<h2>Events</h2>
+<a ui-sref="eventform">Edit/Add</a>
+<ul>
+    <li ng-repeat="event in events">
+        <p>{{ event.date | date:'MMM/dd/yyyy' }}</p>
+        <p>{{ event.nearestCity }}, {{ event.stateProv }}</p>
+        <p></p>
+        <p>{{ event.blurb }}</p>
+    </li>
+</ul>

@@ -1,0 +1,17 @@
+<h2>Event Form</h2>
+<form>
+    <input type="hidden" ng-model="eventObj._id"/>
+    <label>Date:</label>
+    <input type="date" ng-model="eventObj.date" required="required" />
+    <label>Nearest City</label>
+    <input ng-model="eventObj.nearestCity" />
+    <label>State/Prov</label>
+    <input ng-model="eventObj.stateProv" />
+    <label>Country</label>
+    <input ng-model="eventObj.stateProv" />
+    <label>material</label>
+    <input ng-model="eventObj.material" />
+    <label>Blurb</label>
+    <textarea ng-model="eventObj.blurb" ></textarea>
+    <input type="submit" value="Save" ng-click="saveEvent()" />
+</form>
