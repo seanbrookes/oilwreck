@@ -1,17 +1,58 @@
-<h2>Event Form</h2>
-<form>
-    <input type="hidden" ng-model="eventObj._id"/>
-    <label>Date:</label>
-    <input type="date" ng-model="eventObj.date" required="required" />
-    <label>Nearest City</label>
-    <input ng-model="eventObj.nearestCity" />
-    <label>State/Prov</label>
-    <input ng-model="eventObj.stateProv" />
-    <label>Country</label>
-    <input ng-model="eventObj.stateProv" />
-    <label>material</label>
-    <input ng-model="eventObj.material" />
-    <label>Blurb</label>
-    <textarea ng-model="eventObj.blurb" ></textarea>
-    <input type="submit" value="Save" ng-click="saveEvent()" />
-</form>
+<div class="row">
+  <div class="col-xs-12 col-md-5"><h2>Event Form</h2>
+
+    <form role="form">
+      <input type="hidden" ng-model="eventObj._id"/>
+      <div class="form-group">
+        <label>Blurb</label>
+        <textarea ng-model="eventObj.blurb" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Date:</label>
+        <!--<input type="date" ng-model="eventObj.date" required="required" />-->
+        <div class="row">
+          <div class="col-md-6">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="eventObj.date"
+                     is-open="opened"  datepicker-options="dateOptions"
+                     date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+                <span class="input-group-btn">
+                  <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i>
+                  </button>
+                </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Type</label>
+        <input ng-model="eventObj.type" type="text" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label>Nearest City</label>
+        <input ng-model="eventObj.nearestCity" type="text" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label>State/Prov</label>
+        <!--<input ng-model="eventObj.stateProv" ui-event="{keyup: 'getMatchProvStates($event)'}" type="text" class="form-control"/>-->
+        <select ng-model="eventObj.stateProv" ng-options="provState.name for provState in provStates"  class="form-control"></select>
+        <!--<ul>-->
+          <!--<li ng-repeat="provState in provStates">{{ provState.name }}</li>-->
+        <!--</ul>-->
+      </div>
+      <div class="form-group">
+        <label>Country</label>
+        <select ng-model="eventObj.country" ng-options="country.name for country in countries" class="form-control"></select>
+
+      </div>
+      <div class="form-group">
+        <label>material</label>
+        <input ng-model="eventObj.material" type="text" class="form-control"/>
+      </div>
+
+      <button type="submit" class="btn btn-default" value="Save" ng-click="saveEvent()">Save</button>
+    </form>
+  </div>
+  <div class="col-xs-12 col-md-7"></div>
+</div>
+

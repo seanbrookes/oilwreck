@@ -8,7 +8,8 @@ var app = angular.module('app', [
   'Home',
   'Tag',
   'Event',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.utils'
 ]);
 app.run([
   '$http',
