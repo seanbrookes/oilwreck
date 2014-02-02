@@ -2,9 +2,19 @@
 <a ui-sref="eventform">Edit/Add</a>
 <ul>
     <li ng-repeat="event in events">
+      <div ow-event-form ng-model="event"></div>
+      <div ng-hide="editMode">
         <p>{{ event.date | date:'MMM/dd/yyyy' }}</p>
         <p>{{ event.nearestCity }}, {{ event.stateProv }}</p>
         <p></p>
         <p>{{ event.blurb }}</p>
+        <div>
+          <button>Tags</button>
+          <button>Links</button>
+          <button ng-click="editEvent(event)">Edit</button>
+          <button>Goecode</button>
+        </div>
+      </div>
+
     </li>
 </ul>

@@ -10,6 +10,14 @@ Event.controller('EventController',[
     "use strict";
 
     $scope.events = Event.query();
+
+    $scope.editEvent = function(event){
+      console.log(JSON.stringify(event));
+      $state.go('/editevent/' + event._id);
+    };
+
+
+
   }
 ]);
 Event.controller('EventFormController',[
@@ -80,6 +88,7 @@ Event.controller('EventFormController',[
 
 
 
+
     /*
     *
     * Save Event Form
@@ -103,20 +112,15 @@ Event.controller('EventFormController',[
           console.log('bad save new event');
         }
       );
-//      var newTagObj = {};
-//      newTagObj.name = $scope.newTag;
-//      newTagObj.slug = TagService.getSlug($scope.newTag);
-//      console.log('New Tag Slug: ' + newTagObj.slug);
-//      Tag.create(newTagObj,
-//        function(response){
-//          console.log('success Tag create: ' + JSON.stringify(response));
-//        },
-//        function(response){
-//          console.log('bad Tag create: ' + JSON.stringify(response));
-//        });
-//      $scope.newTag = '';
-//      $scope.tags = Tag.query();
+
     };
    }
 
+]);
+Event.controller('EventEditController',[
+  '$scope',
+  function($scope){
+    "use strict";
+    console.log('EDIT EVENT');
+  }
 ]);

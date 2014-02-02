@@ -9,13 +9,19 @@
       </div>
       <div class="form-group">
         <label>Date:</label>
-        <!--<input type="date" ng-model="eventObj.date" required="required" />-->
         <div class="row">
           <div class="col-md-6">
             <p class="input-group">
-              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="eventObj.date"
-                     is-open="opened"  datepicker-options="dateOptions"
-                     date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <input type="text"
+                     class="form-control"
+                     datepicker-popup="{{format}}"
+                     ng-model="eventObj.date"
+                     is-open="opened"
+                     datepicker-options="dateOptions"
+
+                     date-disabled="disabled(date, mode)"
+                     ng-required="true"
+                     close-text="Close"/>
                 <span class="input-group-btn">
                   <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i>
                   </button>
@@ -34,15 +40,11 @@
       </div>
       <div class="form-group">
         <label>State/Prov</label>
-        <!--<input ng-model="eventObj.stateProv" ui-event="{keyup: 'getMatchProvStates($event)'}" type="text" class="form-control"/>-->
-        <select ng-model="eventObj.stateProv" ng-options="provState.name for provState in provStates"  class="form-control"></select>
-        <!--<ul>-->
-          <!--<li ng-repeat="provState in provStates">{{ provState.name }}</li>-->
-        <!--</ul>-->
+        <select ng-model="eventObj.stateProv" ng-options="provState.name as provState.name for provState in provStates"  class="form-control"></select>
       </div>
       <div class="form-group">
         <label>Country</label>
-        <select ng-model="eventObj.country" ng-options="country.name for country in countries" class="form-control"></select>
+        <select ng-model="eventObj.country" ng-options="country.name as country.name for country in countries" class="form-control"></select>
 
       </div>
       <div class="form-group">

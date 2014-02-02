@@ -48,6 +48,11 @@ app.config([
         controller:'EventFormController',
         templateUrl:'./scripts/modules/event/templates/event.form.html'
       }).
+      state('editevent', {
+        url:'/editevent/:id',
+        controller:'EventEditController',
+        templateUrl:'./scripts/modules/event/templates/event.form.html'
+      }).
       state('events', {
         url:'/events',
         controller:'EventController',
