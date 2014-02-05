@@ -2,7 +2,7 @@
 <a ui-sref="eventform">Edit/Add</a>
 <ul>
     <li ng-repeat="event in events">
-      <div ow-event-form ng-model="event"></div>
+      <!--<div ow-event-form ng-model="event"></div>-->
       <div ng-hide="editMode">
         <p>{{ event.date | date:'MMM/dd/yyyy' }}</p>
         <p>{{ event.nearestCity }}, {{ event.stateProv }}</p>
@@ -11,10 +11,11 @@
         <div>
           <button>Tags</button>
           <button>Links</button>
-          <button ng-click="editEvent(event)">Edit</button>
+          <button>Edit</button>
           <button>Goecode</button>
+          <button ng-click="deleteEvent(event)">Delete</button>
         </div>
       </div>
-
+      <hr />
     </li>
 </ul>

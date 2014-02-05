@@ -6,8 +6,14 @@ Event.service('EventService',[
   function(Event){
     "use strict";
 
-    var svc = {};
-    svc.Event = Event;
+    var svc = {api:{}};
+    svc.api.Event = Event;
+    svc.getRecentEvents = function(){
+      var filter = {
+        'filter[order]':'date DESC'
+      };
+      return Event.find(filter);
+    };
 
     return svc;
 

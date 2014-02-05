@@ -5,11 +5,31 @@
 Event.controller('EventController',[
   '$scope',
   '$state',
-  'Event',
-  function($scope, $state, Event){
+  'EventService',
+  function($scope, $state, EventService){
     "use strict";
 
-    $scope.events = Event.query();
+    $scope.events = EventService.getRecentEvents();
+    $scope.sort = function(item) {
+      if (this.predicate == 'date') {
+        return new Date(item.date);
+      }
+      return item[this.predicate];
+    };
+
+    $scope.deleteEvent = function(event){
+      console.log('delete event: ' + JSON.stringify(event));
+      EventService.api.Event.delete(event,
+        function(response){
+          console.log('success delete object: ' + JSON.stringify(response));
+        },
+        function(response){
+          console.log('bad delete object: ' + JSON.stringify(response));
+        }
+      );
+    };
+
+    $scope.reverse = false;
 
     $scope.editEvent = function(event){
       console.log(JSON.stringify(event));
@@ -98,12 +118,12 @@ Event.controller('EventFormController',[
 
 
       var saveEventObj = $scope.eventObj;
-      saveEventObj.country = $scope.eventObj.country.name;
-      saveEventObj.stateProv = $scope.eventObj.stateProv.name;
+//      saveEventObj.country = $scope.eventObj.country.name;
+//      saveEventObj.stateProv = $scope.eventObj.stateProv.name;
 
       console.log('Save Event: ' + JSON.stringify(saveEventObj));
 
-      EventService.Event.create(saveEventObj,
+      EventService.api.Event.create(saveEventObj,
         function(reponse){
           $scope.eventobj = {};
           console.log('saved the event');

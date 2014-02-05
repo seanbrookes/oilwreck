@@ -10,7 +10,7 @@ Event.directive('owEventForm',[
       },
       templateUrl:'./scripts/modules/event/templates/event.form.html',
       require: 'ngModel',
-      controller:function($scope){
+      controller:function($scope, EventService, Event){
         console.log('Event Form Controller');
 
         $scope.provStates = window.provStates;
@@ -74,6 +74,7 @@ Event.directive('owEventForm',[
 
 
 
+
         /*
          *
          * Save Event Form
@@ -83,20 +84,37 @@ Event.directive('owEventForm',[
 
 
           var saveEventObj = $scope.eventObj;
-          saveEventObj.country = $scope.eventObj.country.name;
-          saveEventObj.stateProv = $scope.eventObj.stateProv.name;
 
-          console.log('Save Event: ' + JSON.stringify(saveEventObj));
 
-          EventService.Event.create(saveEventObj,
-            function(reponse){
-              $scope.eventobj = {};
-              console.log('saved the event');
-            },
-            function(response){
-              console.log('bad save new event');
-            }
-          );
+
+          if (saveEventObj.id){
+            saveEventObj.lastUpdate = Date.now();
+
+            delete saveEventObj._id;
+            Event.upsert(saveEventObj,
+              function(response){
+                console.log('Saved the event: ' + JSON.stringify(response));
+              },
+              function(response){
+                console.log('bad update event: ' + JSON.stringify(response));
+              }
+            );
+
+
+          }
+          else{
+            console.log('SAVE NEW SERVICE');
+//            EventService.Event.create(saveEventObj,
+//              function(reponse){
+//                $scope.eventobj = {};
+//                console.log('saved the event');
+//              },
+//              function(response){
+//                console.log('bad save new event');
+//              }
+//            );
+          }
+
 
         };
       },

@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "loopback": "1.6.x",
-    "loopback-connector-mongodb": "1.0.x",
+    "loopback-connector-mongodb": "1.1.4",
     "rc": "~0.3.1",
     "loopback-datasource-juggler": "~1.2.13"
   },
