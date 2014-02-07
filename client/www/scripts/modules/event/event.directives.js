@@ -14,6 +14,7 @@ Event.directive('owEventTags',[
         var tagSource = [];
         $scope.fufuck = '';
         $scope.selected = undefined;
+        $scope.addTagMode = false;
         $scope.events = EventService.getRecentEvents();
         $scope.sort = function(item) {
           if (this.predicate == 'date') {
@@ -22,6 +23,9 @@ Event.directive('owEventTags',[
           return item[this.predicate];
         };
 
+        $scope.toggleAddTag = function(){
+          $scope.addTagMode = !$scope.addTagMode;
+        };
         $scope.addEventTag = function(event, tag){
           console.log('Add Event Tag: ' + event + ' '  + tag + ' '  + tagArray);
           var targetTagObj = {};

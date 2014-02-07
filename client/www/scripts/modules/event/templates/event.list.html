@@ -3,21 +3,17 @@
 <ul>
     <li ng-repeat="event in events">
       <div ow-event-form ng-model="event"></div>
-
       <div ng-hide="editMode">
         <p>{{ event.date | date:'MMM/dd/yyyy' }}</p>
         <p>{{ event.nearestCity }}, {{ event.stateProv }}</p>
-        <p></p>
+        <p>lat: {{ event.location.lat }}, lng: {{ event.location.lng }}</p>
+        <p>type: {{ event.type }}</p>
+        <p>material: {{ event.material }}</p>
         <p>{{ event.blurb }}</p>
         <div ow-event-link-list ng-model="event"></div>
         <div ow-event-tags ng-model="event"></div>
-
-
         <div>
-          <button>Tags</button>
-          <!--<button ng-click="editEvent()">Edit</button>-->
-          <button>Goecode</button>
-          <button ng-click="deleteEvent(event)">Delete</button>
+          <button ng-click="deleteEvent(event)">Delete Event</button>
         </div>
       </div>
       <hr />

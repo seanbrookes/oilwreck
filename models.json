@@ -128,6 +128,9 @@
       },
       "tags": {
         "type": "array"
+      },
+      "location": {
+        "type": "object"
       }
     },
     "public": true,

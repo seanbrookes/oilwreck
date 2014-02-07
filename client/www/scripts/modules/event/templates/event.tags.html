@@ -1,20 +1,20 @@
 <div class='container-fluid'>
   <form name="fuckForm">
-    <h4>add Tag</h4>
+    <button ng-click="toggleAddTag()">add Tag</button>
     <!--<pre>Model: {{selected | json}}</pre>-->
     <input type="text"
            ng-model="fufuck"
            typeahead-on-select="addEventTag(eventObj, fufuck)"
            typeahead="tag for tag in tags | filter:$viewValue | limitTo:8"
-           class="form-control">
+           class="form-control" ng-show="addTagMode" />
   </form>
 
   <div>
-    <h4>Event Tags:</h4>
+    <h4>tags:</h4>
     <ul>
       <li ng-repeat="tag in eventObj.tags">
         {{ tag.name }}
-        <button ng-click="removeEventTag(eventObj, tag)">remove tag</button>
+        <button ng-click="removeEventTag(eventObj, tag)">(x)</button>
       </li>
     </ul>
   </div>

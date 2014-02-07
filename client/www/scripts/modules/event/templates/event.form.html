@@ -41,6 +41,14 @@
         <input ng-model="eventObj.nearestCity" type="text" class="form-control"/>
       </div>
       <div class="form-group">
+        <label>Lat</label>
+        <input ng-model="eventObj.location.lat" type="text" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label>Lng</label>
+        <input ng-model="eventObj.location.lng" type="text" class="form-control"/>
+      </div>
+      <div class="form-group">
         <label>State/Prov</label>
         <select ng-model="eventObj.stateProv" ng-options="provState.name as provState.name for provState in provStates"  class="form-control"></select>
       </div>
