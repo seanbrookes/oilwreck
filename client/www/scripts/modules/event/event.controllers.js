@@ -6,9 +6,13 @@ Event.controller('EventController',[
   '$scope',
   '$state',
   'EventService',
-  function($scope, $state, EventService){
+  '$http',
+  'limitToFilter',
+  'TagService',
+  function($scope, $state, EventService, $http, limitToFilter, TagService){
     "use strict";
-
+    var tagSource = [];
+    $scope.fufuck = '';
     $scope.events = EventService.getRecentEvents();
     $scope.sort = function(item) {
       if (this.predicate == 'date') {
@@ -17,24 +21,45 @@ Event.controller('EventController',[
       return item[this.predicate];
     };
 
-    $scope.deleteEvent = function(event){
-      console.log('delete event: ' + JSON.stringify(event));
-      EventService.api.Event.delete(event,
+    $scope.addEventTag = function(event, tag){
+      console.log('Add Event Tag: ' + event + ' '  + tag + ' '  + tagArray);
+      var targetTagObj = {};
+      for (var i = 0;i < tagArray.length;i++){
+        if (tagArray[i].name === tag){
+          targetTagObj = tagArray[i];
+          break;
+        }
+      }
+
+      event.tags.push(targetTagObj);
+      delete event._id;
+      EventService.api.Event.upsert(event,
         function(response){
-          console.log('success delete object: ' + JSON.stringify(response));
+          console.log('good add tag: ' + JSON.stringify(response));
+          $scope.fufuck = '';
+          $scope.fuckForm.$setPristine();
         },
         function(response){
-          console.log('bad delete object: ' + JSON.stringify(response));
+          console.log('bad add tag: ' + JSON.stringify(response));
         }
       );
     };
+    $scope.deleteEvent = function(event){
+      if (confirm('delete event?')){
+        console.log('delete event: ' + JSON.stringify(event));
+        EventService.api.Event.delete(event,
+          function(response){
+            console.log('success delete object: ' + JSON.stringify(response));
+          },
+          function(response){
+            console.log('bad delete object: ' + JSON.stringify(response));
+          }
+        );
+      }
 
-    $scope.reverse = false;
-
-    $scope.editEvent = function(event){
-      console.log(JSON.stringify(event));
-      $state.go('/editevent/' + event._id);
     };
+
+
 
 
 

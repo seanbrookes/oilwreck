@@ -1,12 +1,16 @@
 /**
  * Created by seanbrookes on 2014-01-29.
+ *
+ * reference: http://stackoverflow.com/questions/8455685/how-to-implement-post-tags-in-mongo
+ *
  */
 Tag.service('TagService',[
-  function(){
+  'Tag',
+  function(Tag){
     "use strict";
 
-    var svc = {};
-
+    var svc = {api:{}};
+    svc.api.Tag = Tag;
     // utility for new tag names
     function replaceAll(find, replace, str) {
       return str.replace(new RegExp(find, 'g'), replace);

@@ -20,3 +20,18 @@ Event.service('EventService',[
   }
 
 ]);
+Event.service('LinkService',[
+  'Link',
+  function(Link){
+    "use strict";
+    var svc = {api:{}};
+    svc.api.Link = Link;
+    svc.api.getEventLinks = function(id){
+      var filter = {
+        'filter[where][eventId]':id
+      };
+      return Link.find(filter);
+    };
+    return svc;
+  }
+]);
