@@ -1,6 +1,71 @@
 /**
  * Created by seanbrookes on 2014-01-29.
  */
+function onGoogleReady() {
+ // angular.bootstrap(document.getElementById("map"), ['app.ui-map']);
+}
+function initCall() {
+  console.log('Google maps api initialized.');
+ // angular.bootstrap(document.getElementById('map'), ['doc.ui-map']);
+}
+app.controller('MapCtrl', ['$scope', 'EventService', function($scope, EventService) {
+
+  $scope.myMarkers = [];
+
+  $scope.mapOptions = {
+    center: new google.maps.LatLng(48.784, -96.670),
+    zoom: 4,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  var rawEventList = EventService.api.Event.query({},
+    function(response){
+      "use strict";
+      angular.forEach(response,function(item){
+        var newGMapPosition = new google.maps.LatLng(item.location.lat, item.location.lng);
+        $scope.myMarkers.push(new google.maps.Marker({
+          map: $scope.myMap,
+          position: newGMapPosition,
+          title: item.nearestCity + ', ' + item.stateProv,
+          description: item.blurb
+        }));
+      });
+    },
+    function(response){
+      "use strict";
+      console.log('bad get events');
+    }
+  );
+  //$scope.myMarkers
+
+  $scope.addMarker = function($event, $params) {
+    $scope.myMarkers.push(new google.maps.Marker({
+      map: $scope.myMap,
+      position: $params[0].latLng
+    }));
+  };
+
+  $scope.setZoomMessage = function(zoom, lat, lng) {
+    $scope.zoomMessage = 'You just zoomed to '+zoom+'!';
+    console.log(zoom,'zoomed')
+  };
+
+  $scope.openMarkerInfo = function(marker) {
+    $scope.currentMarker = marker;
+    $scope.currentLocation = marker.title;
+    $scope.currentMarkerLat = marker.getPosition().lat();
+    $scope.currentMarkerLng = marker.getPosition().lng();
+    $scope.currentDescription = marker.description;
+    $scope.myInfoWindow.open($scope.myMap, marker);
+  };
+
+  $scope.setMarkerPosition = function(marker, lat, lng) {
+    marker.setPosition(new google.maps.LatLng(lat, lng));
+    console.log()
+  };
+}]);
+
+
 
 Event.controller('EventController',[
   '$scope',
@@ -72,7 +137,7 @@ Event.controller('EventFormController',[
   function($scope, $state, EventService){
     "use strict";
     console.log('Event Form Controller');
-
+    $scope.editMode = true;
     $scope.provStates = window.provStates;
     $scope.countries = [
       {

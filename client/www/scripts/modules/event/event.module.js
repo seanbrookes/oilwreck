@@ -3,5 +3,7 @@
  *
  * Geocode reference: http://geocoder.ca/
  *
+ * Geodata ref: http://canadiangis.com/data.php
+ *
  */
 var Event = angular.module('Event',[]);

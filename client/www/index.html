@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
-<body>
+<body ng-app="app">
 
 <div ng-controller="HomeController">
 
@@ -26,6 +26,7 @@
 <script src="./scripts/vendor/angular.js"></script>
 <script src="./bower_components/angular-ui-utils/ui-utils.js"></script>
 <script src="./scripts/vendor/lib/angular-animate.js"></script>
+<script src="./scripts/vendor/lib/ui-map.js"></script>
 <script src="./scripts/vendor/lib/angular-route.js"></script>
 <script src="./scripts/vendor/lib/angular-ui-router.js"></script>
 <script src="./scripts/vendor/lib/angular-touch.js"></script>
@@ -34,6 +35,9 @@
 <script src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
 <script src="./bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onGoogleReady"></script>
 
 <script src="./scripts/modules/common/lb-services.js"></script>
 

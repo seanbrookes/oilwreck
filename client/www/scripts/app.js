@@ -9,7 +9,8 @@ var app = angular.module('app', [
   'Tag',
   'Event',
   'ui.bootstrap',
-  'ui.utils'
+  'ui.utils',
+  'ui.map'
 ]);
 app.run([
   '$http',
