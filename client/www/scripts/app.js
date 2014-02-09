@@ -54,6 +54,11 @@ app.config([
         controller:'EventEditController',
         templateUrl:'./scripts/modules/event/templates/event.form.html'
       }).
+      state('admin', {
+        url:'/admin',
+        controller:'MainAdminController',
+        templateUrl:'./scripts/modules/admin/templates/admin.home.html'
+      }).
       state('events', {
         url:'/events',
         controller:'EventController',
