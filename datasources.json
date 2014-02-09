@@ -6,7 +6,7 @@
   "mongodb": {
     "defaultForType": "mongodb",
     "connector": "loopback-connector-mongodb",
-    "url":"mongodb://localhost:27017/oilwreck"
+    "url":"mongodb://<dbuser>:<dbpassword>@ds027729.mongolab.com:27729/heroku_app22040008"
   },
   "push": {
     "defaultForType": "push",
