@@ -129,6 +129,12 @@
       "volume": {
         "type": "number"
       },
+      "casualties": {
+        "type": "number"
+      },
+      "cost": {
+        "type": "number"
+      },
       "tags": {
         "type": "array"
       },

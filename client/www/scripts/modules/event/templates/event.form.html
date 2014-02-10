@@ -10,6 +10,14 @@
         <textarea ng-model="eventObj.blurb" class="form-control"></textarea>
       </div>
       <div class="form-group">
+        <label>casualties</label>
+        <input ng-model="eventObj.casualties" type="text" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label>cost</label>
+        <input ng-model="eventObj.cost" type="text" class="form-control"/>
+      </div>
+      <div class="form-group">
         <label>Date:</label>
         <div class="row">
           <div class="col-md-6">
@@ -55,7 +63,6 @@
       <div class="form-group">
         <label>Country</label>
         <select ng-model="eventObj.country" ng-options="country.name as country.name for country in countries" class="form-control"></select>
-
       </div>
       <div class="form-group">
         <label>material</label>
