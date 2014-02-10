@@ -126,6 +126,9 @@
       "material": {
         "type": "string"
       },
+      "volume": {
+        "type": "number"
+      },
       "tags": {
         "type": "array"
       },

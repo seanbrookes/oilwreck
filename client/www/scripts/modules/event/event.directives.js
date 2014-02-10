@@ -406,15 +406,7 @@ Event.directive('owEventForm',[
           }
           else{
             console.log('SAVE NEW SERVICE');
-//            EventService.Event.create(saveEventObj,
-//              function(reponse){
-//                $scope.eventobj = {};
-//                console.log('saved the event');
-//              },
-//              function(response){
-//                console.log('bad save new event');
-//              }
-//            );
+
           }
 
 
