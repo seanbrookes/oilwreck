@@ -1,6 +1,5 @@
   <section id="map" ng-controller="MapCtrl" class="container">
-    <h4>Click to add a marker!</h4>
-    <p>{{zoomMessage}}</p>
+    <!--<p>{{zoomMessage}}</p>-->
     <div class="row">
       <div class="col-sm-2">
         <ul class="event-marker-list">
@@ -43,6 +42,7 @@
       <div ow-event-form ng-model="event"></div>
       <div ng-hide="editMode">
         <p>{{ event.date | date:'MMM/dd/yyyy' }}</p>
+        <p>{{ event.blurb }}</p>
         <p>{{ event.nearestCity }}, {{ event.stateProv }}</p>
         <p>lat: {{ event.location.lat }}, lng: {{ event.location.lng }}</p>
         <p>type: {{ event.type }}</p>
@@ -50,7 +50,7 @@
         <p>casualties: {{ event.casualties }}</p>
         <p>cost: {{ event.cost }}</p>
         <p>volume: {{ event.volume }}</p>
-        <p>{{ event.blurb }}</p>
+
         <div ow-event-link-list ng-model="event"></div>
         <div ow-event-tags ng-model="event"></div>
         <div>
