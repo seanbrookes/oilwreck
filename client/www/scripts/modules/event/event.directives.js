@@ -286,6 +286,13 @@ Event.directive('owEventLinkList',[
     }
   }
 ]);
+/**
+ *
+ *
+ * Event Form
+ *
+ *
+ * */
 Event.directive('owEventForm',[
   function(){
     "use strict";
@@ -388,6 +395,7 @@ Event.directive('owEventForm',[
               function(response){
                 console.log('Saved the event: ' + JSON.stringify(response));
                 $scope.editMode = false;
+
               },
               function(response){
                 console.log('bad update event: ' + JSON.stringify(response));

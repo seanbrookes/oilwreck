@@ -13,7 +13,7 @@ app.controller('MapCtrl', ['$scope', 'EventService', function($scope, EventServi
   $scope.myMarkers = [];
 
   $scope.mapOptions = {
-    center: new google.maps.LatLng(48.784, -96.670),
+    center: new google.maps.LatLng(51.784, -96.670),
     zoom: 4,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
@@ -215,7 +215,8 @@ Event.controller('EventFormController',[
 
       EventService.api.Event.create(saveEventObj,
         function(reponse){
-          $scope.eventobj = {};
+          $scope.eventObj = {};
+          $scope.EventForm. $setPristine();
           console.log('saved the event');
         },
         function(response){
