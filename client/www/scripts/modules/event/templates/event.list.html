@@ -41,9 +41,8 @@
     <li ng-repeat="event in events">
       <div ow-event-form ng-model="event"></div>
       <div ng-hide="editMode">
-        <p>{{ event.date | date:'MMM/dd/yyyy' }}</p>
+        <span>{{ event.date | date:'MMM/dd/yyyy' }}</span>&nbsp;<span>{{ event.nearestCity }}, {{ event.stateProv }}</span>
         <p>{{ event.blurb }}</p>
-        <p>{{ event.nearestCity }}, {{ event.stateProv }}</p>
         <p>lat: {{ event.location.lat }}, lng: {{ event.location.lng }}</p>
         <p>type: {{ event.type }}</p>
         <p>material: {{ event.material }}</p>
