@@ -313,6 +313,8 @@ Event.directive('owEventForm',[
           //$state.go('/editevent/' + event._id);
         };
 
+        $scope.magnitudes = [1,2,3,4,5,6,7,8,9,10];
+
         $scope.provStates = window.provStates;
         $scope.countries = [
           {

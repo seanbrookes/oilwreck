@@ -54,12 +54,16 @@ app.config([
         controller:'EventEditController',
         templateUrl:'./scripts/modules/event/templates/event.form.html'
       }).
-
-    state('dot111', {
-      url:'/dot111',
-      controller:'DOT111Controller',
-      templateUrl:'./scripts/modules/dot111/templates/dot111.home.html'
-    }).
+      state('dot111', {
+        url:'/dot111',
+        controller:'DOT111Controller',
+        templateUrl:'./scripts/modules/dot111/templates/dot111.home.html'
+      }).
+      state('reference', {
+        url:'/reference',
+        controller:'ReferenceMainController',
+        templateUrl:'./scripts/modules/reference/templates/reference.links.html'
+      }).
       state('admin', {
         url:'/admin',
         controller:'MainAdminController',
