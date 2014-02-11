@@ -18,3 +18,11 @@ ul{
     padding:0;
     margin: 0;
 }
+.event-list-location{
+    font-weight:bold;
+    color:blue;
+}
+.event-list-date{
+    color:#444444;
+    font-style:italic;
+}

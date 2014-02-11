@@ -8,9 +8,10 @@ function initCall() {
   console.log('Google maps api initialized.');
  // angular.bootstrap(document.getElementById('map'), ['doc.ui-map']);
 }
-app.controller('MapCtrl', ['$scope', 'EventService', function($scope, EventService) {
+app.controller('MapController', ['$scope', 'EventService', function($scope, EventService) {
 
   $scope.myMarkers = [];
+  $scope.model = { myMap: undefined };
 
   $scope.mapOptions = {
     center: new google.maps.LatLng(51.784, -96.670),
@@ -18,24 +19,27 @@ app.controller('MapCtrl', ['$scope', 'EventService', function($scope, EventServi
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
-  var rawEventList = EventService.api.Event.query({},
+  var rawEventList = EventService.getRecentEvents({},
     function(response){
-      "use strict";
-      angular.forEach(response,function(item){
-        var newGMapPosition = new google.maps.LatLng(item.location.lat, item.location.lng);
-        $scope.myMarkers.push(new google.maps.Marker({
-          map: $scope.myMap,
-          position: newGMapPosition,
-          title: item.nearestCity + ', ' + item.stateProv,
-          description: item.blurb
-        }));
-      });
+      console.log('RAW EVENT LIST Callback')
+
     },
     function(response){
       "use strict";
       console.log('bad get events');
     }
   );
+  angular.forEach(rawEventList,function(item){
+    var newGMapPosition = new google.maps.LatLng(item.location.lat, item.location.lng);
+    var map1 = $scope.model.myMap;
+    $scope.myMarkers.push(new google.maps.Marker({
+      map: $scope.model.myMap,
+      position: newGMapPosition,
+      title: item.nearestCity + ', ' + item.stateProv,
+      description: item.blurb
+    }));
+
+  });
   //$scope.myMarkers
 
   $scope.addMarker = function($event, $params) {

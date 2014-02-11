@@ -8,6 +8,7 @@ var app = angular.module('app', [
   'Home',
   'Tag',
   'Event',
+  'Reference',
   'ui.bootstrap',
   'ui.utils',
   'ui.map'

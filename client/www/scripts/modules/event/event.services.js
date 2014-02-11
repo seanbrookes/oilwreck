@@ -12,7 +12,19 @@ Event.service('EventService',[
       var filter = {
         'filter[order]':'date DESC'
       };
-      return Event.find(filter);
+      var eventArrayReturnVar = JSON.parse(window.localStorage.getItem('RecentEvents'));
+      if (eventArrayReturnVar){
+        return eventArrayReturnVar;
+      }
+      return Event.find(filter,
+        function(response){
+          window.localStorage.setItem('RecentEvents',JSON.stringify(response));
+        },
+        function(response){
+          console.log('bad get recent events: ' + JSON.stringify(response));
+        }
+
+      );
     };
 
     return svc;

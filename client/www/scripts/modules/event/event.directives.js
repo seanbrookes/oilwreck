@@ -76,33 +76,10 @@ Event.directive('owEventTags',[
         );
 
 
-
-
-
-//    $scope.getLocation = function(val) {
-//      return $http.get('http://maps.googleapis.com/maps/api/geocode/json', {
-//        params: {
-//          address: val,
-//          sensor: false
-//        }
-//      }).then(function(res){
-//          var addresses = [];
-//          angular.forEach(res.data.results, function(item){
-//            addresses.push(item.formatted_address);
-//          });
-//          return addresses;
-//        });
-//    };
-
         $scope.reverse = false;
 
         $scope.editMode = false;
 
-//    $scope.cities = function(cityName) {
-//      return $http.jsonp("http://gd.geobytes.com/AutoCompleteCity?callback=JSON_CALLBACK&filter=US&q="+cityName).then(function(response){
-//        return limitToFilter(response.data, 15);
-//      });
-//    };
 
         $scope.removeEventTag = function(event, tag){
 //          console.log('REMove tag: ' + JSON.stringify(tag));
@@ -129,7 +106,7 @@ Event.directive('owEventTags',[
 //        console.log(ngModel);
 //        console.log(ngModel.$modelValue);
         var render = function(){
-          console.log('modelValue:', ngModel.$modelValue);
+          //console.log('modelValue:', ngModel.$modelValue);
           scope.eventObj = ngModel.$modelValue;
 
         };
@@ -191,7 +168,7 @@ Event.directive('owEventLinkForm',[
 //        console.log(ngModel);
 //        console.log(ngModel.$modelValue);
         var render = function(){
-          console.log('modelValue:', ngModel.$modelValue);
+          //console.log('modelValue:', ngModel.$modelValue);
           scope.eventObj = ngModel.$modelValue;
 
         };
@@ -247,7 +224,7 @@ Event.directive('owEventLinkList',[
           //console.log('against object: ' + JSON.stringify(saveEventObj));
         }
 
-        console.log('Link List Controller');
+        //console.log('Link List Controller');
 
         $scope.deleteEventLink = function(link){
           if (confirm('delete link?')){
@@ -303,7 +280,7 @@ Event.directive('owEventForm',[
       templateUrl:'./scripts/modules/event/templates/event.form.html',
       require: 'ngModel',
       controller:function($scope, EventService, Event){
-        console.log('Event Form Controller');
+       // console.log('Event Form Controller');
 
         $scope.editMode = false;
 
@@ -419,7 +396,7 @@ Event.directive('owEventForm',[
 //        console.log(ngModel);
 //        console.log(ngModel.$modelValue);
         var render = function(){
-          console.log('modelValue:', ngModel.$modelValue);
+       //   console.log('modelValue:', ngModel.$modelValue);
           scope.eventObj = ngModel.$modelValue;
 
         };
