@@ -445,6 +445,13 @@ Event.directive('owEventMap',[
                 console.log('bad get events');
               }
             );
+        function getCircle(magnitude) {
+          var circle = {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: (magnitude * 3)
+          };
+          return circle;
+        }
             $timeout(function(){
               angular.forEach(rawEventList,function(item){
                 var newGMapPosition = new google.maps.LatLng(item.location.lat, item.location.lng);
@@ -452,6 +459,7 @@ Event.directive('owEventMap',[
                 $scope.myMarkers.push(new google.maps.Marker({
                   map: $scope.myMap,
                   position: newGMapPosition,
+                  icon: getCircle(item.magnitude),
                   title: item.nearestCity + ', ' + item.stateProv,
                   description: item.blurb
                 }));
