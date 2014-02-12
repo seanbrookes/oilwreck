@@ -20,6 +20,7 @@ Tag.controller('TagController',[
       Tag.create(newTagObj,
       function(response){
         console.log('success Tag create: ' + JSON.stringify(response));
+        window.localStorage.removeItem('systemTags');
       },
       function(response){
         console.log('bad Tag create: ' + JSON.stringify(response));

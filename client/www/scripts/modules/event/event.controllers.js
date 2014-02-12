@@ -8,66 +8,6 @@ function initCall() {
   console.log('Google maps api initialized.');
  // angular.bootstrap(document.getElementById('map'), ['doc.ui-map']);
 }
-app.controller('MapController', ['$scope', 'EventService', function($scope, EventService) {
-
-  $scope.myMarkers = [];
-  $scope.model = { myMap: undefined };
-
-  $scope.mapOptions = {
-    center: new google.maps.LatLng(51.784, -96.670),
-    zoom: 4,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-
-  var rawEventList = EventService.getRecentEvents({},
-    function(response){
-      console.log('RAW EVENT LIST Callback')
-
-    },
-    function(response){
-      "use strict";
-      console.log('bad get events');
-    }
-  );
-  angular.forEach(rawEventList,function(item){
-    var newGMapPosition = new google.maps.LatLng(item.location.lat, item.location.lng);
-    var map1 = $scope.model.myMap;
-    $scope.myMarkers.push(new google.maps.Marker({
-      map: $scope.model.myMap,
-      position: newGMapPosition,
-      title: item.nearestCity + ', ' + item.stateProv,
-      description: item.blurb
-    }));
-
-  });
-  //$scope.myMarkers
-
-  $scope.addMarker = function($event, $params) {
-    $scope.myMarkers.push(new google.maps.Marker({
-      map: $scope.myMap,
-      position: $params[0].latLng
-    }));
-  };
-
-  $scope.setZoomMessage = function(zoom, lat, lng) {
-    $scope.zoomMessage = 'You just zoomed to '+zoom+'!';
-    console.log(zoom,'zoomed')
-  };
-
-  $scope.openMarkerInfo = function(marker) {
-    $scope.currentMarker = marker;
-    $scope.currentLocation = marker.title;
-    $scope.currentMarkerLat = marker.getPosition().lat();
-    $scope.currentMarkerLng = marker.getPosition().lng();
-    $scope.currentDescription = marker.description;
-    $scope.myInfoWindow.open($scope.myMap, marker);
-  };
-
-  $scope.setMarkerPosition = function(marker, lat, lng) {
-    marker.setPosition(new google.maps.LatLng(lat, lng));
-    console.log()
-  };
-}]);
 
 
 

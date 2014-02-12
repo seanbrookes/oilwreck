@@ -15,3 +15,11 @@ Home.controller('HomeController', [
 
   }
 ]);
+Home.controller('AboutController',[
+  '$scope',
+  function($scope){
+    "use strict";
+
+  }
+
+]);

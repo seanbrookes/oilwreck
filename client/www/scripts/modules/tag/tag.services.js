@@ -16,6 +16,20 @@ Tag.service('TagService',[
       return str.replace(new RegExp(find, 'g'), replace);
     }
 
+    svc.getSystemTags = function(){
+
+      if (window.localStorage.getItem('systemTags')){
+        return JSON.parse(window.localStorage.getItem('systemTags'));
+      }
+      return Tag.query({},
+        function(response){
+          window.localStorage.setItem('systemTags',JSON.stringify(response));
+        },
+        function(response){
+          console.log('bad get system tags: ' + JSON.stringify(response));
+        }
+      );
+    };
 
     svc.getSlug = function(title){
 

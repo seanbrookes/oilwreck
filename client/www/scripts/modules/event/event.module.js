@@ -3,6 +3,7 @@
  *
  * Geocode reference: http://geocoder.ca/
  * - http://itouchmap.com/
+ * - http://itouchmap.com/latlong.html
  *
  * Geodata ref: http://canadiangis.com/data.php
  *

@@ -70,6 +70,11 @@ app.config([
         controller:'MainAdminController',
         templateUrl:'./scripts/modules/admin/templates/admin.home.html'
       }).
+      state('about', {
+        url:'/about',
+        controller:'AboutController',
+        templateUrl:'./scripts/modules/home/templates/about.home.html'
+      }).
       state('events', {
         url:'/events',
         controller:'EventController',

@@ -56,24 +56,28 @@ Event.directive('owEventTags',[
 
 
         //$scope.tags = ['train','spill','natural gas','ship'];
-        var tagArray = TagService.api.Tag.query({},
-          function(response){
+        var tagArray = TagService.getSystemTags();
+        angular.forEach(tagArray,function(item){
+          tagSource.push(item.name);
+        });
+        $scope.tags = tagSource;
+//          function(response){
 
 //        for (var i = 0;i <  tagArray.length;i++){
 //          tagSource.push(tagArray[i].name);
 //        }
-            angular.forEach(tagArray,function(item){
-              tagSource.push(item.name);
-            });
-            console.log('good tag query proc: ' + JSON.stringify(tagSource));
+//            angular.forEach(tagArray,function(item){
+//              tagSource.push(item.name);
+//            });
+//            console.log('good tag query proc: ' + JSON.stringify(tagSource));
+//
+//            $scope.tags = tagSource;
+//          },
+//          function(response){
+//            console.log('bad tag query: ' + JSON.stringify(response));
+//          }
 
-            $scope.tags = tagSource;
-          },
-          function(response){
-            console.log('bad tag query: ' + JSON.stringify(response));
-          }
-
-        );
+       // );
 
 
         $scope.reverse = false;
@@ -407,4 +411,105 @@ Event.directive('owEventForm',[
       }
     }
   }
+]);
+/**
+ *
+ * Event Map
+ *
+ * */
+Event.directive('owEventMap',[
+  function(){
+    "use strict";
+    return{
+      templateUrl:'./scripts/modules/event/templates/event.map.html',
+      controller:function($scope,EventService, $timeout){
+
+//        $scope.$watch('myMap', function(map) {
+//          if (map) {
+            $scope.myMarkers = [];
+           // $scope.model = { myMap: undefined };
+
+            $scope.mapOptions = {
+              center: new google.maps.LatLng(51.784, -96.670),
+              zoom: 4,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var rawEventList = EventService.getRecentEvents({},
+              function(response){
+                console.log('RAW EVENT LIST Callback')
+
+              },
+              function(response){
+                "use strict";
+                console.log('bad get events');
+              }
+            );
+            $timeout(function(){
+              angular.forEach(rawEventList,function(item){
+                var newGMapPosition = new google.maps.LatLng(item.location.lat, item.location.lng);
+                var map1 = $scope.myMap;
+                $scope.myMarkers.push(new google.maps.Marker({
+                  map: $scope.myMap,
+                  position: newGMapPosition,
+                  title: item.nearestCity + ', ' + item.stateProv,
+                  description: item.blurb
+                }));
+
+              });
+            },5000);
+        console.log('wait for it....5, 4 , 3, 2, 1....');
+
+            //$scope.myMarkers
+
+            $scope.addMarker = function($event, $params) {
+              $scope.myMarkers.push(new google.maps.Marker({
+                map: $scope.myMap,
+                position: $params[0].latLng
+              }));
+            };
+            $scope.setMarkerPosition = function(marker, lat, lng) {
+              marker.setPosition(new google.maps.LatLng(lat, lng));
+              console.log()
+            };
+            $scope.setZoomMessage = function(zoom, lat, lng) {
+              $scope.zoomMessage = 'You just zoomed to '+zoom+'!';
+              console.log(zoom,'zoomed')
+            };
+
+            $scope.openMarkerInfo = function(marker) {
+              $scope.currentMarker = marker;
+              $scope.currentLocation = marker.title;
+              $scope.currentMarkerLat = marker.getPosition().lat();
+              $scope.currentMarkerLng = marker.getPosition().lng();
+              $scope.currentDescription = marker.description;
+              $scope.myInfoWindow.open($scope.myMap, marker);
+            };
+//          }
+//        });
+
+
+
+
+      },
+      link:function(scope, element, attrs, ngModel){
+        // console.log(scope, element, attrs);
+//        console.log(ngModel);
+//        console.log(ngModel.$modelValue);
+        var render = function(){
+          //   console.log('modelValue:', ngModel.$modelValue);
+          scope.eventObj = ngModel.$modelValue;
+
+        };
+
+
+        scope.$watch(attrs['ngModel'], render);
+        render();
+
+
+
+      }
+    }
+  }
+
 ]);
