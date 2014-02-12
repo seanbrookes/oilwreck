@@ -432,7 +432,7 @@ Event.directive('owEventMap',[
             $scope.mapOptions = {
               center: new google.maps.LatLng(51.784, -96.670),
               zoom: 4,
-              mapTypeId: google.maps.MapTypeId.ROADMAP
+              mapTypeId: google.maps.MapTypeId.TERRAIN
             };
 
             var rawEventList = EventService.getRecentEvents({},
@@ -446,11 +446,24 @@ Event.directive('owEventMap',[
               }
             );
         function getCircle(magnitude) {
+//          var circle = {
+//            path: google.maps.SymbolPath.CIRCLE,
+//            scale: (magnitude * 3)
+//          scale: Math.pow(2, (magnitude + .8)) / Math.PI,
+
+//          };
+//          return circle;
           var circle = {
             path: google.maps.SymbolPath.CIRCLE,
-            scale: (magnitude * 3)
+            fillColor: 'red',
+            fillOpacity: .55,
+            scale: (magnitude * 4),
+            strokeColor: 'white',
+            strokeWeight: .5
           };
           return circle;
+
+
         }
             $timeout(function(){
               angular.forEach(rawEventList,function(item){
