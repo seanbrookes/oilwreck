@@ -1,13 +1,10 @@
 /**
  * Created by seanbrookes on 2014-01-29.
  */
-function onGoogleReady() {
- // angular.bootstrap(document.getElementById("map"), ['app.ui-map']);
-}
-function initCall() {
-  console.log('Google maps api initialized.');
- // angular.bootstrap(document.getElementById('map'), ['doc.ui-map']);
-}
+//function onGoogleReady() {
+// // angular.bootstrap(document.getElementById("map"), ['app.ui-map']);
+//}
+
 
 
 

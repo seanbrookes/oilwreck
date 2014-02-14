@@ -12,4 +12,8 @@
  * national railway network: http://www.geobase.ca/geobase/en/data/nrwn/index.html
  *
  */
+function onGoogleReady() {
+  console.log('Google maps api initialized.');
+  angular.bootstrap(document.getElementById('map'), ['Event']);
+}
 var Event = angular.module('Event',[]);

@@ -4,69 +4,79 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
-    <title>Oil Wreck</title>
+    <title>Oilwreck</title>
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/leaflet.css">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body ng-app="app">
 
-<div ng-controller="HomeController" class="container">
+  <div ng-controller="HomeController" class="container">
 
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <a class="navbar-brand" ui-sref="home">Home</a>
-        <a class="navbar-brand" ui-sref="tags">Tags</a>
-        <a class="navbar-brand" ui-sref="events">Events</a>
-        <a class="navbar-brand" ui-sref="admin">Admin</a>
-        <a class="navbar-brand" ui-sref="dot111">DOT-111</a>
-        <a class="navbar-brand" ui-sref="about">About</a>
-        <a class="navbar-brand" ui-sref="reference">Reference</a>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" ui-sref="home">Home</a>
+          <a class="navbar-brand" ui-sref="tags">Tags</a>
+          <a class="navbar-brand" ui-sref="events">Events</a>
+          <a class="navbar-brand" ui-sref="admin">Admin</a>
+          <a class="navbar-brand" ui-sref="dot111">DOT-111</a>
+          <a class="navbar-brand" ui-sref="about">About</a>
+          <a class="navbar-brand" ui-sref="reference">Reference</a>
+          <a class="navbar-brand" ui-sref="map">Map</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
 
     <div ui-view class="container">
         Hello World
     </div>
-</div>
+  </div>
 
-<script src="./scripts/vendor/underscore-min.js"></script>
-<script src="./scripts/vendor/angular.js"></script>
-<script src="./scripts/vendor/lib/ui-utils.js"></script>
-<script src="./scripts/vendor/lib/angular-animate.js"></script>
-<script src="./scripts/vendor/lib/ui-map.js"></script>
-<script src="./scripts/vendor/lib/angular-route.js"></script>
-<script src="./scripts/vendor/lib/angular-ui-router.js"></script>
-<script src="./scripts/vendor/lib/angular-touch.js"></script>
-<script src="./scripts/vendor/lib/angular-sanitize.js"></script>
-<script src="./scripts/vendor/lib/angular-resource.js"></script>
-<script src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
-<script src="./scripts/vendor/lib/ui-bootstrap.js"></script>
-<script src="./scripts/vendor/lib/ui-bootstrap-tpls.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+  <script src="./scripts/vendor/underscore-min.js"></script>
+  <script src="./scripts/vendor/angular.js"></script>
+  <script src="./scripts/vendor/lib/ui-utils.js"></script>
+  <script src="./scripts/vendor/lib/angular-animate.js"></script>
+  <script src="./scripts/vendor/lib/ui-map.js"></script>
+  <script src="./scripts/vendor/lib/angular-leaflet-directive.js"></script>
+  <script src="./scripts/vendor/lib/angular-route.js"></script>
+  <script src="./scripts/vendor/lib/angular-ui-router.js"></script>
+  <script src="./scripts/vendor/lib/angular-touch.js"></script>
+  <script src="./scripts/vendor/lib/angular-sanitize.js"></script>
+  <script src="./scripts/vendor/lib/angular-resource.js"></script>
+  <script src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+  <script src="./scripts/vendor/lib/ui-bootstrap.js"></script>
+  <script src="./scripts/vendor/lib/ui-bootstrap-tpls.js"></script>
 
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onGoogleReady"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onGoogleReady"></script>
 
-<script src="./scripts/modules/common/lb-services.js"></script>
 
-<script src="./scripts/app.js"></script>
-<script src="./scripts/modules/tag/tag.module.js"></script>
-<script src="./scripts/modules/tag/tag.services.js"></script>
-<script src="./scripts/modules/tag/tag.controllers.js"></script>
-<script src="./scripts/modules/event/provstates.js"></script>
-<script src="./scripts/modules/event/event.module.js"></script>
-<script src="./scripts/modules/event/event.services.js"></script>
-<script src="./scripts/modules/event/event.directives.js"></script>
-<script src="./scripts/modules/event/event.controllers.js"></script>
-<script src="./scripts/modules/reference/reference.module.js"></script>
-<script src="./scripts/modules/reference/reference.controllers.js"></script>
-<script src="./scripts/modules/home/home.module.js"></script>
-<script src="./scripts/modules/home/home.services.js"></script>
-<script src="./scripts/modules/home/home.controllers.js"></script>
+
+
+  <script src="./scripts/modules/common/lb-services.js"></script>
+
+  <script src="./scripts/app.js"></script>
+  <script src="./scripts/modules/map/map.module.js"></script>
+  <script src="./scripts/modules/map/map.services.js"></script>
+  <script src="./scripts/modules/map/map.controllers.js"></script>
+  <script src="./scripts/modules/tag/tag.module.js"></script>
+  <script src="./scripts/modules/tag/tag.services.js"></script>
+  <script src="./scripts/modules/tag/tag.controllers.js"></script>
+  <script src="./scripts/modules/event/provstates.js"></script>
+  <script src="./scripts/modules/event/event.module.js"></script>
+  <script src="./scripts/modules/event/event.services.js"></script>
+  <script src="./scripts/modules/event/event.directives.js"></script>
+  <script src="./scripts/modules/event/event.controllers.js"></script>
+  <script src="./scripts/modules/reference/reference.module.js"></script>
+  <script src="./scripts/modules/reference/reference.controllers.js"></script>
+  <script src="./scripts/modules/home/home.module.js"></script>
+  <script src="./scripts/modules/home/home.services.js"></script>
+  <script src="./scripts/modules/home/home.controllers.js"></script>
 
 
 </body>

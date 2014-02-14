@@ -26,3 +26,7 @@ ul{
     color:#444444;
     font-style:italic;
 }
+
+#map {
+    height: 180px;
+}

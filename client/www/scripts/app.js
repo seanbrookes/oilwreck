@@ -9,6 +9,8 @@ var app = angular.module('app', [
   'Tag',
   'Event',
   'Reference',
+  'Map',
+  'leaflet-directive',
   'ui.bootstrap',
   'ui.utils',
   'ui.map'
@@ -74,6 +76,11 @@ app.config([
         url:'/about',
         controller:'AboutController',
         templateUrl:'./scripts/modules/home/templates/about.home.html'
+      }).
+      state('map', {
+        url:'/map',
+        controller:'MapHomeController',
+        templateUrl:'./scripts/modules/map/templates/map.home.html'
       }).
       state('events', {
         url:'/events',
