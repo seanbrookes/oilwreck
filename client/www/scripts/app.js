@@ -10,6 +10,7 @@ var app = angular.module('app', [
   'Event',
   'Reference',
   'Map',
+  'Blog',
   'leaflet-directive',
   'ui.bootstrap',
   'ui.utils',
@@ -81,6 +82,16 @@ app.config([
         url:'/map',
         controller:'MapHomeController',
         templateUrl:'./scripts/modules/map/templates/map.home.html'
+      }).
+      state('map1', {
+        url:'/map1',
+        controller:'EventGMapController',
+        templateUrl:'./scripts/modules/event/templates/event.gmap.html'
+      }).
+      state('blog', {
+        url:'/blog',
+        controller:'BlogMainController',
+        templateUrl:'./scripts/modules/blog/templates/blog.home.html'
       }).
       state('events', {
         url:'/events',

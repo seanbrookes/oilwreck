@@ -21,12 +21,13 @@ Tag.controller('TagController',[
       function(response){
         console.log('success Tag create: ' + JSON.stringify(response));
         window.localStorage.removeItem('systemTags');
+        $scope.tags = Tag.query();
       },
       function(response){
         console.log('bad Tag create: ' + JSON.stringify(response));
       });
       $scope.newTag = '';
-      $scope.tags = Tag.query();
+
     };
     $scope.tags = Tag.query(
       function(response){

@@ -94,7 +94,7 @@
     "properties": {
       "id": {
         "type": "string",
-        "id":"true"
+        "id": "true"
       },
       "date": {
         "type": "date"
@@ -197,5 +197,49 @@
     "public": true,
     "dataSource": "mongodb",
     "plural": "links"
+  },
+  "post": {
+    "properties": {
+      "id": {
+        "type": "string",
+        "id":true
+      },
+      "userId": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "summary": {
+        "type": "string"
+      },
+      "body": {
+        "type": "string"
+      },
+      "author": {
+        "type": "string"
+      },
+      "version": {
+        "type": "number"
+      },
+      "date": {
+        "type": "date"
+      },
+      "publishDate": {
+        "type": "date"
+      },
+      "lastUpdate": {
+        "type": "date"
+      }
+    },
+    "public": true,
+    "dataSource": "mongodb",
+    "plural": "posts"
   }
 }

@@ -8,6 +8,52 @@
 
 
 
+/*
+*
+*
+* Event GMap controller
+*
+* */
+
+Event.controller('EventGMapController',[
+  '$scope',
+  '$state',
+  'EventService',
+  '$http',
+  'limitToFilter',
+  'TagService',
+  function($scope, $state, EventService, $http, limitToFilter, TagService){
+    "use strict";
+//    var tagSource = [];
+//    $scope.fufuck = '';
+//    $scope.events = EventService.getRecentEvents();
+//    $scope.sort = function(item) {
+//      if (this.predicate == 'date') {
+//        return new Date(item.date);
+//      }
+//      return item[this.predicate];
+//    };
+
+
+
+
+
+
+
+  }
+]);
+
+
+
+
+
+
+
+
+
+
+
+
 Event.controller('EventController',[
   '$scope',
   '$state',
@@ -44,6 +90,7 @@ Event.controller('EventController',[
           console.log('good add tag: ' + JSON.stringify(response));
           $scope.fufuck = '';
           $scope.fuckForm.$setPristine();
+
         },
         function(response){
           console.log('bad add tag: ' + JSON.stringify(response));
@@ -159,6 +206,7 @@ Event.controller('EventFormController',[
         function(reponse){
           $scope.eventObj = {};
           $scope.EventForm. $setPristine();
+          window.localStorage.removeItem('RecentEvents');
           console.log('saved the event');
         },
         function(response){

@@ -6,9 +6,11 @@
 
     <title>Oilwreck</title>
 
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="css/leaflet.css">
-  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="./css/leaflet.css">
+  <link rel="stylesheet" href="./css/demo.css">
+  <link rel="stylesheet" href="./css/medium-editor.css">
+  <link rel="stylesheet" type="text/css" href="./style/style.css">
 </head>
 <body ng-app="app">
 
@@ -26,6 +28,8 @@
           <a class="navbar-brand" ui-sref="about">About</a>
           <a class="navbar-brand" ui-sref="reference">Reference</a>
           <a class="navbar-brand" ui-sref="map">Map</a>
+          <a class="navbar-brand" ui-sref="map1">G Map</a>
+          <a class="navbar-brand" ui-sref="blog">Blog</a>
         </div>
       </div>
     </nav>
@@ -38,7 +42,19 @@
 
   <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
   <script src="./scripts/vendor/underscore-min.js"></script>
+  <!--<script src="./scripts/vendor/showdown/extensions/github.js"></script>-->
+  <!--<script src="./scripts/vendor/showdown/extensions/prettify.js"></script>-->
+  <!--<script src="./scripts/vendor/showdown/extensions/table.js"></script>-->
+  <!--<script src="./scripts/vendor/showdown/extensions/twitter.js"></script>-->
+  <!--<script src="./scripts/vendor/showdown/showdown.js"></script>-->
+
   <script src="./scripts/vendor/angular.js"></script>
+
+  <!--<script src="./scripts/vendor/angular-medium-editor.min.js"></script>-->
+
+  <script src="./scripts/vendor/medium-editor.js"></script>
+  <script src="./scripts/vendor/angular-medium-editor.js"></script>
+
   <script src="./scripts/vendor/lib/ui-utils.js"></script>
   <script src="./scripts/vendor/lib/angular-animate.js"></script>
   <script src="./scripts/vendor/lib/ui-map.js"></script>
@@ -67,6 +83,10 @@
   <script src="./scripts/modules/tag/tag.module.js"></script>
   <script src="./scripts/modules/tag/tag.services.js"></script>
   <script src="./scripts/modules/tag/tag.controllers.js"></script>
+  <script src="./scripts/modules/blog/blog.module.js"></script>
+  <script src="./scripts/modules/blog/blog.services.js"></script>
+  <script src="./scripts/modules/blog/blog.directives.js"></script>
+  <script src="./scripts/modules/blog/blog.controllers.js"></script>
   <script src="./scripts/modules/event/provstates.js"></script>
   <script src="./scripts/modules/event/event.module.js"></script>
   <script src="./scripts/modules/event/event.services.js"></script>
