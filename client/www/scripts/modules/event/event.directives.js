@@ -198,6 +198,7 @@ Event.directive('owEventLinkList',[
         $scope.addLinkMode = false;
 
         $scope.linkObj = {};
+        $scope.links = [];
 
         $scope.addLink = function(event){
           $scope.addLinkMode = true;
@@ -256,7 +257,7 @@ Event.directive('owEventLinkList',[
 //          console.log('modelValue:', ngModel.$modelValue);
 //          scope.eventObj = ngModel.$modelValue;
           var eventId = ngModel.$modelValue.id;
-          scope.links = LinkService.api.getEventLinks(eventId);
+         // scope.links = LinkService.api.getEventLinks(eventId);
 
         };
 

@@ -1,10 +1,17 @@
 <div>
   <div ow-event-link-form ng-model="event"></div>
-  <h4>links:</h4>
-  <ul>
-    <li ng-repeat="link in links">
-      <a href="{{ link.url }}" target="_new" >title: {{ link.title }}</a>
-      <button ng-model="link" ng-click="deleteEventLink(link)">delete</button>
-    </li>
-  </ul>
+  <div class="row">
+    <div class="col-xs-1">
+      links:
+    </div>
+    <div class="col-xs-11">
+      <ul>
+        <li ng-repeat="link in links">
+          <a href="{{ link.url }}" target="_new" >title: {{ link.title }}</a>
+          <button ng-model="link" ng-click="deleteEventLink(link)">delete</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 </div>

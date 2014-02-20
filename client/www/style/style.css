@@ -1,3 +1,6 @@
+body{
+    font-size:16px;
+}
 ul{
     list-style:none;
 }
@@ -46,4 +49,77 @@ li {
     list-style-type: disc;
     list-style-position: inside;
     padding: 0 12px;
+}
+.lnk-command{
+    border:0;
+    background-color:transparent;
+    font-size:73%;
+    color:blue;
+    text-decoration: underline;
+}
+.event-command{
+    float:right;
+}
+.tags-list li{
+    display:inline;
+}
+.event-blurb{
+    /*border:1px solid #bbbbbb;*/
+    /*border-radius:1rem;*/
+    background-color:rgba(213, 213, 213, .7);
+    font-style: italic;
+    font-size:110%;
+    color:#666666;
+    padding:.5rem;
+}
+.add-tag-form{
+    /*float:right;*/
+}
+.add-link-toggle{
+    float:right;
+}
+.event-card{
+    border:1px solid #aaaaaa;
+    border-radius:1.5rem;
+    padding:1rem;
+    margin-bottom:1rem;
+}
+.event-card label{
+    color:#3c510c;
+}
+.master-event-list{
+    list-style:none;
+}
+.master-event-list li{
+    list-style:none;
+}
+.mag-1{
+    background-color: rgba(255,25,25,.1);
+}
+.mag-2{
+    background-color: rgba(255,25,25,.2);
+}
+.mag-3{
+    background-color: rgba(255,25,25,.3);
+}
+.mag-4{
+    background-color: rgba(255,25,25,.4);
+}
+.mag-5{
+    background-color: rgba(255,25,25,.5);
+}
+.mag-6{
+    background-color: rgba(255,25,25,.6);
+}
+.mag-7{
+    background-color: rgba(255,25,25,.7);
+}
+.mag-8{
+    background-color: rgba(255,25,25,.8);
+}
+.mag-9{
+    background-color: rgba(255,25,25,.9);
+}
+.mag-10{
+    background-color: rgba(255,25,25,1);
 }
