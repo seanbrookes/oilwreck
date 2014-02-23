@@ -16,7 +16,7 @@ var app = angular.module('app', [
   'ui.utils',
   'ui.map',
   'angular-medium-editor',
-  'ngGrid'd
+  'ngGrid'
 ]);
 app.run([
   '$http',
