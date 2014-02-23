@@ -14,7 +14,9 @@ var app = angular.module('app', [
   'leaflet-directive',
   'ui.bootstrap',
   'ui.utils',
-  'ui.map'
+  'ui.map',
+  'angular-medium-editor',
+  'ngGrid'd
 ]);
 app.run([
   '$http',

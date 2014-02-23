@@ -8,19 +8,19 @@ Blog.directive('blogMarkdown',function(){
     restrict: 'E',
     controller:function($scope){
 
-      var blog = {};
-      blog.body = '';
-
-      $scope.blog = blog;
-
-      $scope.preview = function(){
-       // blog.body =
-      }
+//      var blog = {};
+//      blog.body = '';
+//
+//      $scope.blog = blog;
+//
+//      $scope.preview = function(){
+//       // blog.body =
+//      }
 
     },
     link: function (scope, element, attrs) {
-      var htmlText = converter.makeHtml(element.text());
-      element.html(htmlText);
+//      var htmlText = converter.makeHtml(element.text());
+//      element.html(htmlText);
     }
   };
 });

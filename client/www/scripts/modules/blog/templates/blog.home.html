@@ -1,6 +1,12 @@
 <div>
   <h1>Blog Home</h1>
+
   <form name="demo">
-    <div ng-model="text" medium-editor>test</div>
+
+    <label>Title</label>
+    <input type="text" ng-model="currentPost.title" />
+    <div ng-model="currentPost.body" medium-editor>test</div>
+    <button ng-click="savePost()">save</button>
   </form>
+  <div class="postGridStyle" ng-grid="postGridOptions"></div>
 </div>

@@ -3741,6 +3741,413 @@ module.factory(
     );
   }]);
 
+/**
+ * @ngdoc object
+ * @name lbServices.Post
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Post` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory(
+  "Post",
+  ['LoopBackResource', 'LoopBackAuth', function(Resource, LoopBackAuth) {
+    return Resource(
+      urlBase + "/posts/:id",
+      { 'id': '@id' },
+      {
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#create
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         * @param {Object} postData Request data.
+         * This method expects a subset of model properties as request parameters.
+         *
+
+         * @param {Function(Object, Object)=} successCb
+         *    Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *    `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         */
+        "create": {
+          url: urlBase + "/posts",
+          method: "POST",
+
+        },
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#updateOrCreate
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         * @param {Object} postData Request data.
+         * This method expects a subset of model properties as request parameters.
+         *
+
+         * @param {Function(Object, Object)=} successCb
+         *    Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *    `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         */
+        "updateOrCreate": {
+          url: urlBase + "/posts",
+          method: "PUT",
+
+        },
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#upsert
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         * @param {Object} postData Request data.
+         * This method expects a subset of model properties as request parameters.
+         *
+
+         * @param {Function(Object, Object)=} successCb
+         *    Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *    `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         */
+        "upsert": {
+          url: urlBase + "/posts",
+          method: "PUT",
+
+        },
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#exists
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Check whether a model instance exists in the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         * Object properties:
+         *
+         * - `id` – `{*}` - Model id
+         *
+
+         * @param {Function(Object, Object)=} successCb
+         *    Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *    `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         * - `exists` – `{*=}` - 
+         */
+        "exists": {
+          url: urlBase + "/posts/:id/exists",
+          method: "GET",
+
+        },
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#findById
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Find a model instance by id from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         * Object properties:
+         *
+         * - `id` – `{*}` - Model id
+         *
+
+         * @param {Function(Object, Object)=} successCb
+         *    Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *    `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         */
+        "findById": {
+          url: urlBase + "/posts/:id",
+          method: "GET",
+
+        },
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#find
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Find all instances of the model matched by filter from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         * Object properties:
+         *
+         * - `filter` – `{object=}` - Filter defining fields, where, orderBy, offset, and limit
+         *
+
+         * @param {Function(Array.<Object>, Object)=} successCb
+         *    Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *    `httpResponse`.
+         *
+         * @return {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         */
+        "find": {
+          url: urlBase + "/posts",
+          method: "GET",
+          isArray: true,
+
+        },
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#findOne
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Find first instance of the model matched by filter from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         * Object properties:
+         *
+         * - `filter` – `{object=}` - Filter defining fields, where, orderBy, offset, and limit
+         *
+
+         * @param {Function(Object, Object)=} successCb
+         *    Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *    `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         */
+        "findOne": {
+          url: urlBase + "/posts/findOne",
+          method: "GET",
+
+        },
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#destroyById
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         * Object properties:
+         *
+         * - `id` – `{*}` - Model id
+         *
+
+         * @param {Function(Object, Object)=} successCb
+         *    Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *    `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         * This method returns no data.
+         */
+        "destroyById": {
+          url: urlBase + "/posts/:id",
+          method: "DELETE",
+
+        },
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#deleteById
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         * Object properties:
+         *
+         * - `id` – `{*}` - Model id
+         *
+
+         * @param {Function(Object, Object)=} successCb
+         *    Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *    `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         * This method returns no data.
+         */
+        "deleteById": {
+          url: urlBase + "/posts/:id",
+          method: "DELETE",
+
+        },
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#removeById
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         * Object properties:
+         *
+         * - `id` – `{*}` - Model id
+         *
+
+         * @param {Function(Object, Object)=} successCb
+         *    Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *    `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         * This method returns no data.
+         */
+        "removeById": {
+          url: urlBase + "/posts/:id",
+          method: "DELETE",
+
+        },
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#count
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Count instances of the model matched by where from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         * Object properties:
+         *
+         * - `where` – `{object=}` - Criteria to match model instances
+         *
+
+         * @param {Function(Object, Object)=} successCb
+         *    Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *    `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         * - `count` – `{number=}` - 
+         */
+        "count": {
+          url: urlBase + "/posts/count",
+          method: "GET",
+
+        },
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#prototype$updateAttributes
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Update attributes for a model instance and persist it into the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         * @param {Object} postData Request data.
+         * This method expects a subset of model properties as request parameters.
+         *
+
+         * @param {Function(Object, Object)=} successCb
+         *    Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *    `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         */
+        "prototype$updateAttributes": {
+          url: urlBase + "/posts/:id",
+          method: "PUT",
+
+        },
+      }
+    );
+  }]);
+
 
 module
   .factory('LoopBackAuth', function() {
