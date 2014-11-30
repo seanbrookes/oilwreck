@@ -6,7 +6,7 @@
   "mongodb": {
     "defaultForType": "mongodb",
     "connector": "loopback-connector-mongodb",
-    "url": "mongodb://heroku_app22040008:56a684n47bj8mpbb2m3vkqkoih@ds027729.mongolab.com:27729/heroku_app22040008"
+    "url": "mongodb://heroku_app22040008_A:EHAHmGbthyLQaYAzOGyQTSqGnCWrhTbT@ds027729.mongolab.com:27729/heroku_app22040008"
   },
   "push": {
     "defaultForType": "push",
